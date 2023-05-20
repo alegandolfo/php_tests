@@ -7,7 +7,7 @@ use ENGA5\ListaNumerica;
 class ListaNumericaTest extends TestCase {
 
     /**
-     *  @dataProvider casosDeTestes
+       @dataProvider casosDeTestes
      */
 
     public function testQuantidadeValores($vet, $expected) {
@@ -15,17 +15,6 @@ class ListaNumericaTest extends TestCase {
         $ln->setValores($vet);
 
         $this->assertEquals($expected, $ln->verificaQuantidade());
-    }
-
-    /**
-     *  @dataProvider casosDeTestes2
-     */
-
-    public function testValores($vet, $expected) {
-        $ln = new ListaNumerica;
-        $ln->setValores($vet);
-
-        $this->assertEquals($expected, $ln->verificaValores());
     }
 
     public function casosDeTestes(): array {
@@ -36,11 +25,22 @@ class ListaNumericaTest extends TestCase {
         ];
     }
 
+    /**
+       @dataProvider casosDeTestes2
+     */
+
+    public function testValores($vet, $expected) {
+        $ln = new ListaNumerica;
+        $ln->setValores($vet);
+
+        $this->assertEquals($expected, $ln->verificaValores());
+    }
+
     public function casosDeTestes2(): array {
         return [
-            'Quantidade vazia.'                  => [[], 'Invalido'],
-            'Quantidade menor que 4.'            => [[10001, 10002, 10003], 'Valido'],
-            'Quantidade e intervalo válido.'     => [[10001, 10002, 10003, 10004], 'Valido']
+            'Valor vazio.'                         => [[], 'Invalido'],
+            'Valor menor do que 10000.'            => [[55555, 66666, 77777, 3333], 'Invalido'],
+            'Valores validos.'                     => [[55555, 66666, 77777, 33333], 'Valido']
         ];
     }
 
