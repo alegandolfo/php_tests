@@ -7,7 +7,7 @@ use ENGA5\ListaNumerica;
 class ListaNumericaTest extends TestCase {
 
     /**
-       @dataProvider casosDeTestes
+     * @dataProvider casosDeTestes
      */
 
     public function testQuantidadeValores($vet, $expected) {
@@ -26,7 +26,7 @@ class ListaNumericaTest extends TestCase {
     }
 
     /**
-       @dataProvider casosDeTestes2
+     *@dataProvider casosDeTestes2
      */
 
     public function testValores($vet, $expected) {
